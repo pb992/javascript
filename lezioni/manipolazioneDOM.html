@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="start"></div>
+    <div class="here">First</div>
+    <div class="here">Second</div>
+    <ul>
+        <li>One</li>
+        <li>Two</li>
+        <li>Three</li>
+        <li>Four</li>
+    </ul>
+    <p>One</p>
+    <button onclick="one()">Press for function</button>
+    <button onclick="two()">Create</button>
+    <button onclick="erase()">Remove</button>
+    <button onclick="changeText()">Cambia lista</button>
+    <script>
+        document.getElementById('start').innerHTML = "Hello World";
+        function one() {
+            // x = document.getElementsByTagName('ul')[0];            
+            // x.getElementsByTagName('li')[1].innerHTML = "T'ho cambiato";
+            x = document.getElementsByTagName('p');
+            document.getElementById('start').innerHTML = x.item(0).innerHTML;
+        }        
+    </script>
+    <script>
+        function two(){
+            //creo un nuovo elemento (un paragrafo)
+            y = document.createElement('p');
+            // inserisco un valore nel nuovo elemento
+            y.innerHTML = "Start New";
+            // gli dico in quale posizione inserirlo, come "figlio" del div id="start"
+            document.getElementById('start').appendChild(y);
+        }
+        function erase() {
+            document.getElementById('start').removeChild(y);
+        }
+    </script>
+    <script>
+        /*modifica stile*/
+        document.getElementById('start').style.color = "red";
+    </script>
+    <script>
+        function changeText() {
+            let lista = document.getElementsByTagName("li");
+            // posso accedere ai metodi dell'array per iterare sugli HTML collections trasformandoli in un array. Nessuna conversione successiva è necessaria basta modificare gli elementi nel nuovo array creato
+            let listarray = Array.from(lista);
+            listarray.forEach(function(i){
+                i.textContent = "lista modificata";
+            });
+        }
+    </script>
+</body>
+</html>

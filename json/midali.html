@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // definisco il path per il file json
+        let requestURL = './classe.json';
+        // istanzio un oggetto request
+        let request = new XMLHttpRequest();
+        // dico quale sarà la task che dovrà effettuare l'oggetto request e su quale file json dovrà lavorare
+        request.open('GET', requestURL);
+        // specifico che andrò a lavorare su un file json
+        request.responseType = 'json';
+        //invio la richiesta
+        request.send();
+        // onload => una volta che le informazioni sono state reperite dal file json, dico che cosa fare con quei dati
+        request.onload = function () {
+            const classe = request.response;
+            console.log(classe.insegnanti[1]);
+        }
+        // utilizzando le promise
+        fetch('classe.json').then(function (response) {
+            return response.json();
+        }).then(function (json){
+            classe = json;
+            console.log("Dati: ", classe);
+        }).catch(function (err) {
+            console.log("Fetch problem: ", err.message);
+        });
+
+    </script>
+</body>
+</html>

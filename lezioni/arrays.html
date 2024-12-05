@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        numer = new Array(1,2,3,4);
+        numer.push(13);
+        numer.pop(); // elimino l'ultimo valore inserito
+        numer.unshift(4); // inserisco al primo posto
+        num = numer.shift(); // elimino il primo valore e lo assegno a una variabile(num)
+        console.log(numer);
+        var z = ["Stephany", "Michelle", "Valery", "Maria"];
+        var y = z.concat(numer);
+        y.sort(); //ordino in ordine crescente
+        // y.reverse();  ottengo il contrario dell'array
+        y.sort().reverse(); // ordino in modo decrescente
+        numer.forEach(function (i){
+            console.log(i);
+        })
+        console.log(y)
+    </script>
+    <script>
+        num1 = new Array(1,2,3,4);
+        num2 = new Array(3,4,5,6);
+        num3 = num1.concat(num2);
+        num3.sort();
+        console.log(num3);
+        //foreach metodo 1
+        num1.forEach(function(i){
+            console.log(i)
+        });
+        //foreach metodo 2
+        num2.forEach(num => console.log(num));
+
+        var x = [10,20,50,75,100];
+        var zero = 0;
+        for(i in x) {
+            zero += x[i];
+            console.log(zero);
+        }
+        zero = 0;
+        for(i of x) {
+            zero += i;
+            console.log(zero);
+        }
+        
+        zero = 0;
+        var es = "1 222 15 45    46";
+        var result = es.split(/\s/);
+        
+        console.log(result);
+        for(i of result) {
+            if(i == "") continue;
+            zero += parseInt(i);            
+        }
+        console.log(zero);
+    </script>
+</body>
+</html>

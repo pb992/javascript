@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // blocking code è il modo classico di programmare, in cui si lavora su un singolo thread che si occupa di gestire tutte le richieste
+        // con async mi smazzo tutte le operazioni più lunghe che mi andrebbero a bloccare il sito
+        function loadAsset(url, type, callback) {
+            let xhr = new XMLHttpRequest();
+            xhr.open('GET', url);
+            xhr.responseType = type;
+
+            xhr.onload = function () {
+                callback(xhr.response);
+            };
+
+            xhr.send();
+        }
+
+        function displayImage(blob) {
+            let objectURL = URL.createObjectURL(blob);
+
+            let image = document.createElement("img");
+            image.src = objectURL;
+            document.body.append(image);
+        }        
+        /*
+            la funzione principale utilizza una call back al suo interno, cosa significa?
+
+            Che la prima funzione in qualche modo prepara il campo per l'esecuzione della seconda (questo verrà facilitato con le promise)
+        */
+        loadAsset('https://ak.picdn.net/shutterstock/videos/11773709/thumb/10.jpg', 'blob', displayImage);                
+
+    </script>
+</body>
+</html>

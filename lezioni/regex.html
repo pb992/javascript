@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // controllare tutti i caratteri che vanno dalla a alla z (minuscola)
+        let X = /[a-z]/;
+        var y = new RegExp('[a-z]');
+        
+        var a = /[0-9]/;
+        // ^ carattere inizio regex
+        // il + verifica il singolo carattere
+        // $ fine regex
+        var x = /^[a-z0-9]+$/;
+        // il metodo test restituisce un valore booleano
+        var y = x.test("10");
+        /* 
+        exec invece legge carattere per carattere e restituisce
+        nel caso true: un array contenente i caratteri componenti la stringa "controllata"
+        nel caso false: null
+        */
+        var z = x.exec("Paul");
+        console.log(z);
+        // \w indica una stringa alfanumerica MAIUSCOLA
+        // \W indica una stringa alfanumerica minuscola
+        var b = /[\w]/;
+        console.log(b.test("ABBA15"));
+        // \S indica una stringa senza spazi
+        // \s indica una stringa in cui sono compresi gli spazi
+        var space = /[\s]/;
+        console.log(space.test("asasf"));
+        console.log(y);
+        // mi restituisce la prima occorrenza della regex immessa come parametro
+        let c = "start here".search(/\s/);
+        // in questo modo dividerà la stringa dividendola in due, partendo dagli spazi
+        let d = "start here".split(/\s/);
+        // g verifica tutte le corrispondenze
+        let e = "start1here2".match(/\d/g);
+        let f = "start1here2".replace(/\d/g, " ");
+        console.log(d);
+        console.log(e);
+        console.log(f);
+    </script>
+</body>
+</html>

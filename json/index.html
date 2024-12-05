@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="start"></div>
+    <div id="start2"></div>
+
+    <script>
+        // x = {"name" : "Fabio","surname" : "Miceli", "age" : 32};
+        // w = {"name" : "Fabio","surname" : "Miceli", "work" : ["Manager", "Developer"]};
+        // y = JSON.parse(x);
+        // z = {"name" : "Fabio","funzione" : function one(){console.log(x)},"surname" : "Miceli", "age" : 32 };
+        
+        //converte in stringa un oggetto javascript
+        
+        //esclude dalla stringa le operazioni js
+        
+        // w = JSON.stringify(z);
+        // document.getElementById("start2").innerHTML = w;
+
+        // y = '';
+
+        // for( i in x) {
+        //     y += i + ": " + x[i] + "<br/>";            
+        // };
+        // document.getElementById("start").innerHTML = y;
+        
+        
+        // fetch("data.json")
+        // .then(response => response.text())
+        //     .then(text => {
+        //         try{
+        //             const x = JSON.parse(text);
+        //             document.getElementById("start").innerHTML = x.people[1].name;
+        //         } catch(err){
+        //             console.log(err);
+        //         }
+        //     });
+
+        // fetch("data.json")
+        // .then(response => {
+        //     console.log(response)})
+        //     .catch(error => console.log("Wrong"));
+                        
+        
+        // function two(first, second, callback1) {
+        //     words = first + ' ' + second;
+        //     callback1(words);
+        // }
+        // setTimeout(two, 3000, "hello", "world", one);
+        async function one() {
+
+            promise1 = new Promise(function(ok, no){
+                y = "Hello world";
+
+            if(y == "Hello world") {
+                ok("Yes");
+            } else {
+                no("No");
+            }
+        });
+        
+        document.getElementById('start').innerHTML = await promise1;
+    }
+    one();
+        // promise1.then(
+        //     function(value) {
+        //         one(value);                
+        //     },
+        //     function(error){
+        //         one(error);
+        //     }
+        // );
+        
+        // aync ci da come risultato la promise(lancia ed esegue), await (controlla se l'operazione è stata eseguita correttamente)
+
+    </script>
+</body>
+</html>

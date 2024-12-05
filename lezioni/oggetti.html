@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="qui"></div>
+    
+    <script>
+        var people1 = { name: "Paul", surname: "Beckham", work:{
+            company: "Gesca", role: "Odoo Developer"}};
+        //posso anche aggiungere proprietà dell'oggetto dall'esterno
+        people1.age = 32;
+        // modi di istanziare un oggetto o una singola proprietà in una nuova variabile
+        let nome = people1.name;
+        let name = people1["name"]            
+        
+        function namesurname() {
+            return "Paul Beckham";
+        }
+
+        var x = {one: 1, two: 2}
+        var y = {one: 2, three: 5}
+        var z = Object.assign(x,y) // assegnerà a z entrambi gli oggetti, mantenendo i valori dell'ultimo oggetto assegnato(x e y hanno due proprietà uguali, verranno passate al log quelle di y)
+        console.log(z)
+        // questa funzione assumerà il ruolo di costruttore
+        function me() {
+            this.name = ""
+            this.surname = ""
+        }
+
+        me.prototype.surname = "Miceli" //dato di default
+        let paul = new me();
+        paul.name = "Paul";
+
+        let manuel = new me();
+        manuel.name = "Manuel";
+        console.log(manuel);
+
+        let persona = Object.create(null);        
+
+        let oggetto = {personaldata: function() {
+            this.name = "";
+            this.surname ="";
+        }}
+
+        var fabio = class Persona{
+            constructor(name) {
+                this.name = name;
+            }
+            get getname(){
+                return this.name;
+            }
+            set setname(name){
+                this.name = name;
+            }
+        }
+        class subFabio extends fabio{
+            constructor(name) {
+                super(name);
+            }
+        }
+        let ao = new fabio("Fabio");
+        ao.setname ="Rabarbaro"; // questo è il modo di chiamare il set setname
+        console.log(ao.getname) // questo è il modo di chiamare il get getname
+    </script>
+    <script>
+        class Persona{
+            constructor(name, surname) {
+                this.name = name;
+                this.surname = surname;
+            }
+        }
+        let X = new Persona("Fabio", "Miceli");
+        // per l'interpolazione delle stringhe si utilizzano i backtick nella stringa invece degli apici singoli o delle virgolette e prima delle parentesi graffe il simbolo del dollaro
+        console.log(`Ciao, mi chiamo ${X.name} ${X.surname}`);
+        document.getElementById('qui').innerHTML = X.name + ' '+ X.surname;        
+    </script>    
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- fetch è una funzione asincrona che ritorna una promise (una promessa da parte del software che verrà ritornato un risultato) -->
+    <script>
+         // il chaining è la concatenazione delle richieste nella promise (then, then, catch)
+        fetch('coffee.jpg')
+        .then(response => {
+            return response.blob();
+        })
+        .then(myImg => {
+            // creo una URL che servirà per la source dell'immagine
+            let objectURL = URL.createObjectURL(myImg);
+            // creo l'elemento img in html
+            let image = document.createElement('img');
+            // assegno l'URL alla source dell'immagine
+            image.src = objectURL;
+            // attacco al body della pagina l'elemento appena creato
+            document.body.appendChild(image);
+        })
+        .catch( e =>{
+            console.log("C'è stato un problema con la tua operazione fetch", e.message);
+        });
+        // questa è la funzione però scritta con async e await
+        async function myFetch() {
+            let response = await fetch('coffee.jpg');
+            let myBlob = await response.blob();
+
+            let objectURL = URL.createObjectURL(myImg);            
+            let image = document.createElement('img');
+            image.src = objectURL;            
+            document.body.appendChild(image);
+        }
+        // e in seguito aggiungo il catch
+        myFetch.catch(e => {
+            console.log("C'è stato un problema con la tua operazione fetch", e.message);
+        })
+
+
+        // CREAZIONE DELLA PROMISE
+        function timeoutPromise(message, interval) {
+            return new Promise((resolve, reject) => {
+                if(message === "" || typeof message !== "string") {
+                    reject("Message is empty or not a string");
+                }
+                else if(interval < 0 || typeof interval !== "number") {
+                    reject("Interval is negative or not a number");
+                }
+                else {
+                    setTimeout(function () {
+                        resolve(message);
+                    }, interval);
+                }
+            });
+        }
+        // UTILIZZO DELLA PROMISE
+        timeoutPromise("Hello There!", 2000)
+        .then(message => {
+            alert(message);
+        })
+        .catch(e => {
+            console.log("Error: ", e);
+        });
+        // await "blocca" lo svolgimento della funzione finchè il risultato non viene ritornato
+        async function hello() {
+            return greeting = await Promise.resolve("hello");
+        }
+        // nel return di una funzione asincrona c'è una promise
+        console.log(hello());
+        // in questo caso invece ritorno direttamente la stringa della funzione
+        hello().then((value) => {
+            console.log(value)
+        });
+
+       
+
+     </script>
+</body>
+</html>

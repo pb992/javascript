@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="start"></div>
+    <script>
+        x = "Hello";
+        // padStart andrà ad apporre la stringa immessa come secondo parametro, nei limiti numerico apposto come primo parametro
+        //x = x.padStart(10, " World");
+        //in questo caso andrò ad apporre alla fine della stringa data la stringa immessa come secondo parametro nei liimiti del primo parametro
+        y = x.padEnd(11, " World"); // output Hello World
+        console.log(y);
+        a = "5";
+        // se il valore concatenato, è minore rispetto al limite che abbiamo dato, questo continuerà a ripetersi fino al raggiungimento del limite posto come primo parametro
+        a = a.padEnd(4, 1); // output 5111 (length = 4), ripetizione del secondo parametro fino ad arrivare alla lunghezza definita
+        console.log(a);
+    </script>
+</body>
+</html>

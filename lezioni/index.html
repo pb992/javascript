@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var nome= "Fabio";
+        /*è un pop up che appare nella pagina*/
+        alert("Hello " + nome + "!")        
+    </script>
+    <!--document fa riferimento all'interno documento HTML, mentre innerHTML permmete di ottenere o impostare il contenuto HTML interno di un elemento-->
+    <button onclick="document.getElementById('start').innerHTML = Date();">Time</button>
+    <select onchange="document.getElementById('start').innerHTML = 'New Selection'">
+        <option value="One">One</option>
+        <option value="Two">Two</option>
+        <option value="Three">Three</option>
+    </select>
+    <button onmouseover="document.getElementById('start').innerHTML = Date()">Time Over</button>
+    <div id="start"></div>
+</body>
+</html>

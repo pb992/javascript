@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        x = ["Mark", "Michelle", "Philip"];
+        // includes permette di iterare per l'array e cercare un valore come parametro della funzione
+        console.log(x.includes("Mark"));
+
+        y = {name: "Vartan", surname: "Mercadanti", work: "Grafico"};
+        // il metodo values restituisce i valori contenuti nell'array(funge da iteratore)
+        z = Object.values(y);
+        for(a of z) {
+            console.log(a);
+        }
+        console.log(x.includes("Mark"));
+    </script>
+</body>
+</html>

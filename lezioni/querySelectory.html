@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="start">
+        <div class="last">Start One</div>
+        <div id="last2">Start Two</div>
+        <div id="last3">Start Three</div>
+    </div>
+    <script>
+        document.querySelector(".last").style.color = "red";
+        document.querySelector('#last2').style.color = 'green';
+        // in questo modo trasformo la x in una lista contenente tutti i div, in questo caso
+        x = document.querySelectorAll("div");
+        x[3].style.color = "violet";
+    </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="start">Start One</div>
+    <button id="click">Click</button>
+    <button id="remove" onclick="remove()">Remove</button>
+    <button id="add" onclick="add()">Add</button>
+    <script>
+        
+        
+        function one() {
+            document.getElementById("start").innerHTML = "Start New";
+        }
+        function two() {
+            document.getElementById("start").innerHTML = "Start Two";
+        }
+        function three() {
+            document.getElementById("start").innerHTML = "Start Three";
+        }
+        function remove() {
+            document.getElementById("start").removeEventListener("mouseover", two);
+            document.getElementById("start").removeEventListener("mouseout", three);
+        }
+        function add() {
+            x = document.getElementById("click");
+            // cliccando sul bottone esegue la funzione one
+            x.addEventListener("click", one);
+            y = document.getElementById("start");
+            // passando il mouse sul div esegue la funzione two
+            y.addEventListener("mouseover", two);
+            // togliendo il mouse dal div esegue la funzione three
+            y.addEventListener("mouseout", three);            
+        }
+    </script>
+</body>
+</html>

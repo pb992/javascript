@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="start"></div>
+    <script>
+        // FILTER
+        x = [2020,2021,2022,2023,2024];
+        c = [1,2,3,4,5];
+        y = x.filter((z) => {
+            return z > 2021;
+        });
+        // MAP esegue una trasformazione di ogni elemento dell'array
+        a = x.map((z) => {
+            return z+10;
+        });
+        // REDUCE - estrae un elemento dall'array facendo delle operazioni sugli stessi
+        b = c.reduce((w,z) => {
+            return w + z
+        },0);
+        // 0 è il valore di partenza, che verrà confrontato (o addizionato in questo caso), con il primo elemento dell'array
+        // w è il valore risultante dalla prima "iterazione", e verrà addizionato ad ogni elemento "z" dell'array
+        d = c.reduce((w,z) => {
+            return w * z;
+        },2);
+        // in questo caso il valore iniziale che verrà moltiplicato (perchè return w * z) è 2, w sarà il prodotto di ogni elemento dell'array, e z è corrispondente ad ogni singolo elemento di c(l'array)        
+        console.log(d);
+
+    </script>
+</body>
+</html>

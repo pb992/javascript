@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="start"></div>
+
+    <script>
+
+        if(navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(pos, poserror);
+        }
+
+        function pos(position) {
+            console.log("Lat: " + position.coords.latitude);
+            console.log("Lon: " + position.coords.longitude);
+        }
+        function poserror(err) {
+            if(err.PERMISSION_DENIED) {
+                console.log("Permission denied");
+            } else {
+                console.log("Undefined error")
+            }
+        }
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="start">        
+        <div id="last">Start 1</div>
+        <div id="last2">Start 2</div>
+    </div>    
+    <script>
+        // creo un nuovo elemento
+        x = document.createElement("div");
+        y = document.createTextNode("Start new");
+        //lo inserisco come "figlio" del div "start"
+        x.appendChild(y);
+        
+        z = document.getElementById("start");
+        w = document.getElementById("last2");
+        z.insertBefore(x, w);
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Inserisco una label per l'utente -->
+    <p>Insert your username</p>
+    <!-- Inserisco l'elemento input che gestirà la variabile nome dell'utente -->
+    <input type="text" id="username" placeholder="your username.."/>
+    <!-- Inserisco il bottone con l'eventListener che gestirà il click -->
+    <button id="submitButton">Send</button>
+    <!-- Inserisco un campo in cui mostrare l'output -->
+    <p id="output"></p>
+    <script>
+        // una variabile per l'input
+        let username = document.getElementById('username');
+        // una per il bottone
+        let submitButton = document.getElementById('submitButton');
+        // l'ultima per il <p> in cui verrà inserito l'output
+        let output = document.getElementById('output');
+        // inserisco un event listener, al click, con funzione js collegata
+        submitButton.addEventListener('click', function() {
+            const nome = username.value;
+
+            output.textContent = `Hi ${nome}!`; 
+        });
+    </script>
+</body>
+</html>

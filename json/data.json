@@ -1,0 +1,35 @@
+{ "people":
+[
+{
+    "name" : "Fabio", 
+    "surname" : "Miceli", 
+    "work" : "Odoo developer",
+    "age" : 32
+},
+{
+    "name" : "Michelle", 
+    "surname" : "Green", 
+    "work" : ["Manager", "Developer"],
+    "age" : 37
+},
+
+{
+    "name" : "Daniel", 
+    "surname" : "White", 
+    "work" : { "role": "Developer", "company": "Gesca"},
+    "age" : 45
+},
+{
+    "name" : "Jane", 
+    "surname" : "Tellow", 
+    "work" : "Developer",
+    "age" : 29
+},
+{
+    "name" : "Fabio", 
+    "surname" : "Miceli", 
+    "work" : "Odoo developer",
+    "age" : 32
+}
+]
+}

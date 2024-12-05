@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Accetti i termini e condizioni?</h1>
+    <input type="checkbox" id="acceptBox">
+    <label for="acceptBox">Accetto</label>
+    <button id="submitButton" style="border-radius: 10px;">Invia</button>
+    <p id="output"></p>
+    <script>
+        const checkbox = document.getElementById('acceptBox');
+        const button = document.getElementById('submitButton');
+        const output = document.getElementById('output');
+
+        button.addEventListener("click", function(){
+            if(checkbox.checked) {
+                output.textContent = "Hai accettato i termini e condizioni";
+            } else {
+                output.textContent = "Non hai accettato i termini e condizioni";
+            }
+            button.disabled = true;
+        });
+    </script>
+</body>
+</html>
