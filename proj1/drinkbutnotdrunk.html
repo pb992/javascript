@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drink but not drank</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="htpps://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>Drink but not Drunk</h1>
+    </header>
+    <section class="sec_01">
+        Insert your age and check if you can drink
+    </section>
+    <div id="ageoutput"></div>
+    <section class="sec_02">
+        <input class="inp_01" value="your age" id="ageinput"/>
+        <button class="but_01" onclick="dd()">Send</button>
+    </section>
+    <footer>
+        Copyright Fabio Miceli
+    </footer>
+    <script>
+        function dd() {
+            x = document.getElementById('ageinput').value;
+            if(x < 21){
+                document.getElementById('ageoutput').innerHTML = "You can't drink"
+            } else {
+                document.getElementById('ageoutput').innerHTML = "You can drink"
+            }
+        }
+    </script>
+</body>
+</html>

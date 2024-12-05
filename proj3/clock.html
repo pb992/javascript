@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clock Widget</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="bootstrap/bootstrap.min.css">
+</head>
+<body>
+        
+    <div class="clock_k">
+        <div class="clock_f">
+            <div class="clock_b"></div>
+            <div class="clock_r hour_m"></div>
+            <div class="clock_r min_m"></div>
+            <div class="clock_s sec_m"></div>         
+        </div>
+
+        <script>
+            var clockhour = document.querySelector('.hour_m');
+            var clockmin = document.querySelector('.min_m');
+            var clocksec = document.querySelector('.sec_m');
+
+
+            function setDate() {
+                var s = moment().format("s");
+                var sd = ((s/60)*360)+90;
+                clocksec.style.transform = "rotate("+ sd + "deg)";
+                
+                var m = moment().format("m");
+                var md = ((m/60)*360)+((s/60)*6)+90; 
+                clockmin.style.transform = "rotate("+ md + "deg)";
+                
+                
+                var h = moment().format("H");
+                var hd = ((h/12)*360)+((m/60)*30)+90; 
+                clockhour.style.transform = "rotate("+ hd + "deg)";
+            }
+            // per ottenere il movimento ad ogni secondo delle la lancette
+            setInterval(setDate, 1000);
+
+        </script>
+        <!-- funzione per l'orario -->
+        <script src="moment.min.js"></script>
+        <!-- funzione per il fuso orario -->
+        <script src="moment-timezone-with-data.min.js"></script>
+    </div>
+    
+</body>
+</html>

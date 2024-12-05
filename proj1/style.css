@@ -1,0 +1,45 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+}
+h1 {
+    font-size: 50px;
+    font-weight: 700;
+    color: rgb(9, 171, 9);
+}
+section{
+    margin: 20px;
+}
+.sec_01{
+    font-size: 25px;
+}
+.but_01{
+    background-color: rgb(9, 171, 9);
+    color: white;
+    font-size: 18px;
+    height: 30px;
+    border-radius: 10px;
+    border: 0px;
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+}
+.but_01:hover{
+    background-color: rgb(65, 230, 65);
+    color: black;
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+}
+.inp_01{
+    font-size: 18px;
+    border: 1px solid black;
+    height: 30px;
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+}
+footer {
+    margin: 25px;
+    font-size: 15px;
+}
+#ageoutput{
+    font-size: 25px;
+    color: red;
+}

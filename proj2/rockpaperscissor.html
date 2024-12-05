@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,700;&display=swap" rel="stylesheet">
+</head>
+<body>
+    
+    <header class="points">
+        <div class="player_pt">
+            <h2>Player</h2><p>0</p>
+        </div>
+        <div class="system_pt">
+            <h2>System</h2><p>0</p>
+        </div>
+    </header>
+
+    <section class="game">
+        <div class="start">
+            <h1> Rock - Paper - Scissors</h1>
+            <button>Start</button>
+        </div>
+
+        <div class="vs gameout">
+            <h2 class="ps_win">Rock, paper or Scissors?</h2>
+            <div class="check">
+                <button class="rock">rock</button>
+                <button class="paper">paper</button>
+                <button class="scissor">scissors</button>
+            </div>
+            <div class="launch">
+                <img class="player_game" src="img/paper.png">
+                <img class="system_game" src="img/paper.png">
+            </div>
+        </div>
+        <div class="ps_winend gameout">
+            <h1 class="ps_win_stop"></h1>
+            <button>Restart game</button>
+        </div>
+    </section>
+    <script src="rps.js"></script>
+</body>
+</html>
