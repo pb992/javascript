@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="start"></div>
+    <!-- insert nome dell'elemento da aggiungere alla lista -->
+    <input type="text" id="inputNew">
+    <!-- aggiunge effettivamente l'elemento con accanto un bottone che può essere utilizzato per rimuoverlo -->
+    <button id="addBtn">Aggiungi</button>
+    
+    <script>
+        let a = document.getElementById("inputNew");
+        let addBtn = document.getElementById("addBtn");
+        let start = document.getElementById("start");
+
+        
+        addBtn.addEventListener("click", function() {
+            let x = document.createElement("div");
+            let removeBtn = document.createElement("button");
+            removeBtn.innerHTML = "Remove";
+            x.innerHTML = a.value;
+            start.appendChild(x);
+            x.appendChild(removeBtn);
+            
+            removeBtn.addEventListener("click", function(){
+                start.removeChild(x);
+            });
+        });
+    </script>
+</body>
+</html>

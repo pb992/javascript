@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="paragraph">Paragrafo</p>
+    <button onclick="change()">Clicca</button>
+    <p>Inserisci due numeri:</p>
+    <input type="number" id="num1">
+    <input type="number" id="num2">
+    <button id="buttonSomma">Calcola</button>
+    <p id="output"></p>
+    <div id="caso">CoseACaso</div>
+    <button id="buttonHide">Nascondi div</button>
+    <script>
+        function change() {
+            let x = document.getElementById("paragraph");
+            x.textContent = "Paragrafo cambiato";
+        }
+        
+            let num1 = document.getElementById("num1");
+            let num2 = document.getElementById("num2");
+            
+            const output = document.getElementById("output");
+            const buttonSomma = document.getElementById("buttonSomma");
+            
+            buttonSomma.addEventListener("click", function() {                
+                let somma = parseInt(num1.value) || 0 + parseInt(num2.value) || 0;
+                output.textContent = somma;
+            });                  
+        
+            let a = document.getElementById("caso");
+            let buttonHide = document.getElementById("buttonHide");
+
+            buttonHide.addEventListener("click", function() {
+                if(a.style.display === "none") {
+                    a.style.display = "block";
+                    buttonHide.textContent = "Nascondi div";  
+                } else {
+                    a.style.display = "none";                       
+                    buttonHide.textContent = "Mostra div";  
+                }
+            });
+    </script>
+</body>
+</html>

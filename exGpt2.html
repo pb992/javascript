@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <br>    
+    <input id="username" type="text" placeholder="Username">
+    <input id="email" type="email" placeholder="username@username.com">
+    <input id="password" type="password" placeholder="Password">
+    <button id="sendBtn" style="border-radius: 10px;">Invia</button>
+    
+    <p></p>
+    <br>
+    
+    <button id="redBtn" style="background-color: red;">Red</button>
+    <button id="yellowBtn" style="background-color: yellow;">Yellow</button>
+    <button id="greenBtn" style="background-color: green;">Green</button>
+    
+    <br>
+    
+    <p id="var">0</p>
+    <button id="incrementBtn">Incrementa</button>
+    <script>
+        const username = document.getElementById("username");
+        const email = document.getElementById("email");
+        const pass = document.getElementById("password");
+        const btn1 = document.getElementById("sendBtn");
+
+        btn1.addEventListener("click", function(){
+            if(username.value.length == 0 || email.value.length == 0 || pass.value.length == 0) {
+                alert("Devi riempire tutti i campi!");    
+            } else {
+                alert(`Registrazione effettuata con successo!\nUsername: ${username.value}\nEmail: ${email.value}\nPassword: ${pass.value}`);
+            }
+        });
+
+        const btn2 = document.getElementById("redBtn");
+        const btn3 = document.getElementById("yellowBtn");
+        const btn4 = document.getElementById("greenBtn");
+
+        btn2.addEventListener("click", function() {
+            document.body.style.backgroundColor = "Red";
+        });
+        btn3.addEventListener("click", function() {
+            document.body.style.backgroundColor = "Yellow";
+        });
+        btn4.addEventListener("click", function() {
+            document.body.style.backgroundColor = "Green";
+        });
+
+        const bnt5 = document.getElementById("incrementBtn");
+        const a = document.getElementById("var");
+        let counter = 0;
+                
+        bnt5.addEventListener("click", function() {
+            counter += 1;
+            a.textContent = counter;                        
+        });
+    </script>
+</body>
+</html>

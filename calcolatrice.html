@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<div id="calcolatrice">
+    <input type="text" id="display" readonly>
+    <table>                    
+            <tr>
+                <td><button class="button">1</button></td>
+                <td><button class="button">2</button></td>
+                <td><button class="button">3</button></td>
+            </tr>
+            <tr>
+                <td><button class="button">4</button></td>
+                <td><button class="button">5</button></td>
+                <td><button class="button">6</button></td>
+            </tr>
+            <tr>
+                <td><button class="button">7</button></td>
+                <td><button class="button">8</button></td>
+                <td><button class="button">9</button></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><button class="button">0</button></td>
+                <td></td>
+            </tr>
+    </table>
+    <table>
+        <tr>
+            <td>
+                <button class="button">+</button>
+                <button class="button">-</button>
+                <button class="button">/</button>
+                <button class="button">*</button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button class="button">=</button>
+            </td>
+            <td>
+                <button class="button">C</button>
+            </td>            
+        </tr>        
+    </table>
+    
+    <br>
+</div>
+    <script>
+        let buttons = document.querySelectorAll('.button');
+        const display = document.getElementById("display");
+
+        let currentInput = " ";
+        let operator = " ";
+        let previousInput = " ";
+
+        buttons.forEach(button => {
+            button.addEventListener("click", function(){
+                // questa variabile permette l'acquisizione del valore del contenuto dell'elemento HTML
+                const value = this.textContent;
+
+                if(value === "C"){
+                    currentInput = " ";
+                    operator = " ";
+                    previousInput = " ";
+                    display.value = " ";
+                } else if(value === "="){
+                    if(currentInput && previousInput) {
+                        display.value = eval(previousInput + operator + currentInput);
+                        previousInput = display.value;
+                        currentInput = " ";
+                        operator = " ";
+                    }
+                }else if(["+", "-", "*", "/"].includes(value)) {
+                    if(currentInput) {
+                        operator = value;
+                        previousInput = currentInput;
+                        currentInput = " ";
+                    }
+                } else {
+                    currentInput += value;
+                    display.value = currentInput;
+                }
+            });
+        });         
+    </script>
+</body>
+</html>
